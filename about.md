@@ -1,14 +1,13 @@
 ---
-layout: page
+layout: default
 title: About
 ---
 
-<p class="message">
- My name is Daniel and I`m currently takin Computer Engineer in PUC-Rio. This is my [GitHub](https://github.com/dcguim)
-</p>
+
+ My name is Daniel and I`m currently takin Computer Engineer in PUC-Rio.
+
 
 Thanks for reading!
 
-{% raw %}
-{% include twitter_plug.html %}
-{% endraw %}
+### Contact:
+[My GitHub](https://github.com/dcguim)

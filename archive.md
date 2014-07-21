@@ -1,9 +1,9 @@
 ---
-layout: page
-title: Archive
+layout: default
+title: Posts
 ---
 
-## Blog Posts
+## Posts & Projects
 
 {% for post in site.posts %}
   * {{ post.date | date_to_string }} &raquo; [ {{ post.title }} ]({{ post.url }})
