@@ -53,13 +53,15 @@ Now is where it gets interesting, we can finally use DOM to iterate in the tree 
 {% highlight cl %}
 (dom:do-node-list (n (dom:get-elements-by-tag-name (dom:document-element *tree*) "metadataPrefix")) (print(dom:node-value(dom:item(dom:child-nodes n)0))))
 {% endhighlight %}
-Let me brake this piece of code in bite sizes so it all get understandable. First I`m doing the dom version of the lisp function do-list which will iterate in the variable i called **n**(nodes). The list of nodes I got with the handy function **dom:get-elements-by-tag-name**. So I`m iterating only in the nodes **<metadataPrefix>**. Now come the tricky part.
+Let me brake this piece of code in bite sizes so it all get understandable. First I\`m doing the dom-version of the lisp function do-list which will iterate in the variable I called **n**(nodes). The list of nodes feed to do-list I got with the handy function **dom:get-elements-by-tag-name**. So I`m iterating only in the nodes **<metadataPrefix>**. Now comes the tricky part.
+
 
 "In the DOM, everything is a node. Element nodes do not have a text value.
 
 The text of an element node is stored in a child node. This node is called a text node.
 
-The way to get the text of an element is to get the value of the child node (text node)." [DOM Reference](http://www.w3schools.com/dom/dom_nodes_get.asp)
+The way to get the text of an element is to get the value of the child node (text node)."[DOM Reference](http://www.w3schools.com/dom/dom_nodes_get.asp)
+
 
 So that is why i need to access the childs of n(**dom:child-nodes**), from those i want the first element(**dom:item**, similar to the CL **elt**) and then I can get the **node-value**.
 
@@ -69,7 +71,7 @@ Now I got the list:
 "ore" 
 "mets" 
 
-So I can call the function previously defined as list-records and get the XML in one of these formats, such as:
+So I can call the function previously defined as list-records to get the XML in one of these formats, such as:
 {% highlight cl %}
 (list-records "oai_dc")
 {% endhighlight %}
