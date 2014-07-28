@@ -1,6 +1,6 @@
 ---
-layout: layout
-title: Drakma a Quick Overview
+layout: default
+title: Drakma Quick Overview
 ---
 
 ### Overview:
